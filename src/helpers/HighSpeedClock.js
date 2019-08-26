@@ -1,9 +1,11 @@
 export default class HighSpeedClock {
-    listeners = []
-    pending = null
-    boundOnTick
-    lastTickTime = -1
-    running = false
+    constructor() {
+        this.listeners = []
+        this.pending = null
+        this.boundOnTick = null
+        this.lastTickTime = -1
+        this.running = false
+    }
 
     start() {
         this.running = true
