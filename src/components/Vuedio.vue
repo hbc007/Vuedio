@@ -311,7 +311,7 @@ export default {
             if (!this.subtitlesClock) {
                 this.subtitlesClock = new HighSpeedClock()
                 this.subtitlesClock.tick(() => {
-                    if (this.subtitlesInstance) {
+                    if (this.subtitlesInstance && this.player) {
                         this.subtitlesInstance.setCurrentTime(this.player.timestamp + this.offset)
                     }
                 })
