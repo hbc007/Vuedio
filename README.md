@@ -50,8 +50,8 @@ applications.
 ### Plain HTML usage
 1. include `<script>` tag and styles somewhere:
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/vuedio@0.2.3/dist/vuedio.umd.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuedio@0.2.3/dist/vuedio.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuedio@0.2.5/dist/vuedio.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuedio@0.2.5/dist/vuedio.min.css"></script>
     ```
 2. use Vuedio in your application:
     ```js
