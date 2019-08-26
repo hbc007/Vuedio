@@ -1,28 +1,43 @@
 {
-  "name": "vuedio-js",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
-    "@vue/eslint-config-prettier": "^5.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "prettier": "^1.18.2",
-    "sass": "^1.18.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "name": "vuedio",
+    "description": "Standalone all-in-one video player for vue.js",
+    "version": "0.2.1",
+    "author": {
+        "name": "tggdesu"
+    },
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build --target lib --name vuedio ./src/index.js",
+        "build-demo": "vue-cli-service build --dest demo/dist ./demo/main.js && node -e \"var fs=require('fs');try{fs.mkdirSync('./demo/dist/static')}catch(e){};fs.readdirSync('./demo/static').forEach(it=>{try{fs.copyFileSync('./demo/static/'+it,'./demo/dist/static/'+it)}catch(e){}})\"",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "core-js": "^2.6.5",
+        "dashjs": "^3.0.0",
+        "hls.js": "^0.12.4",
+        "vue": "^2.6.10"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.11.0",
+        "@vue/cli-plugin-eslint": "^3.11.0",
+        "@vue/cli-service": "^3.11.0",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "sass": "^1.18.0",
+        "sass-loader": "^7.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "peerDependencies": {
+        "dashjs": "^3.0.0",
+        "hls.js": "^0.12.4"
+    },
+    "files": [
+        "dist/*",
+        "src/*",
+        "public/*",
+        "*.json",
+        "*.js"
+    ],
+    "main": "src/index.js"
 }
