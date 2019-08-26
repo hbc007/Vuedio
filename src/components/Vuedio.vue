@@ -773,7 +773,6 @@ export default {
         this.tech.addEventListener('timeupdate', this.onTimeUpdate.bind(this))
         this.tech.addEventListener('loadedmetadata', this.onResize.bind(this))
         this.tech.addEventListener('volumechange', () => {
-            console.log('volumechange')
             this.volume = this.tech.muted ? 0 : this.tech.volume
         })
         this.tech.addEventListener('progress', this.onProgress.bind(this))
