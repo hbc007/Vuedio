@@ -221,7 +221,7 @@ export default {
                 return this.sources.map((it) => (
                     {
                         id: it.id,
-                        name: it.quality || it.height ? it.height + 'p' : '',
+                        name: it.quality || it.height ? it.height + 'p' : it.name || '',
                         selected: this.currentSource ? this.currentSource.id === it.id : false,
                         callback: () => {
                             this.changeTo(it, true)
@@ -324,7 +324,11 @@ export default {
             if (this.infoTimer) {
                 clearTimeout(this.infoTimer)
             }
-            this.infoText = text
+            if (!text) {
+                this.infoVisible = false
+                return
+            }
+            this.infoText = text || ''
             this.infoVisible = true
             if (temp) {
                 // @ts-ignore
@@ -959,6 +963,7 @@ export default {
                         padding: 4px 8px 4px 24px;
                         transition: background-color 0.25s;
                         font-size: 15px;
+                        min-height: 26px;
 
                         &:hover {
                             background: rgba(255, 255, 255, 0.33)

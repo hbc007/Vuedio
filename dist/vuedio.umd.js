@@ -7180,8 +7180,8 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.component('VolumeSlider', VolumeSlider_component.exports)
 }
 /* harmony default export */ var VolumeSlider = (VolumeSlider_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"750588ab-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./scripts/global-vue-loader.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Vuedio.vue?vue&type=template&id=b7878164&
-var Vuediovue_type_template_id_b7878164_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"750588ab-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./scripts/global-vue-loader.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Vuedio.vue?vue&type=template&id=9e1b2074&
+var Vuediovue_type_template_id_9e1b2074_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{
             vuedio: true,
             'vuedio-fullscreen': _vm.fullscreen,
             'vuedio-inactive': _vm.inactive && !_vm.paused,
@@ -7192,10 +7192,10 @@ var Vuediovue_type_template_id_b7878164_render = function () {var _vm=this;var _
                                 'mdi-volume-low': _vm.volume > 0 && _vm.volume < 0.4,
                                 'mdi-volume-variant-off': _vm.volume <= 0
                             }})]),_c('div',{staticClass:"vuedio-button--popup"},[_c('VolumeSlider',{attrs:{"value":_vm.volume},on:{"update:value":function($event){_vm.volume=$event}}})],1)]),_c('button',{directives:[{name:"show",rawName:"v-show",value:(_vm.pipAvailable),expression:"pipAvailable"}],staticClass:"vuedio-button vuedio-pip-button",on:{"click":function($event){_vm.inPip ? _vm.exitPip() : _vm.enterPip()}}},[_c('i',{class:'mdi ' + (_vm.inPip ? 'mdi-window-restore' : 'mdi-picture-in-picture-bottom-right')})]),_c('button',{directives:[{name:"show",rawName:"v-show",value:(_vm.fullscreenAvailable),expression:"fullscreenAvailable"}],staticClass:"vuedio-button vuedio-fullscreen-button",on:{"click":function($event){_vm.fullscreen ? _vm.exitFullscreen() : _vm.enterFullscreen()}}},[_c('i',{class:'mdi ' + (_vm.fullscreen ? 'mdi-fullscreen-exit' : 'mdi-fullscreen')})])],1)]),_c('div',{staticClass:"vuedio-info",class:{ 'vuedio-info--visible': _vm.infoVisible },domProps:{"innerHTML":_vm._s(_vm.infoText)}})])}
-var Vuediovue_type_template_id_b7878164_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vuedio-loading"},[_c('div',{staticClass:"vuedio-loading--spinner"})])}]
+var Vuediovue_type_template_id_9e1b2074_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vuedio-loading"},[_c('div',{staticClass:"vuedio-loading--spinner"})])}]
 
 
-// CONCATENATED MODULE: ./src/components/Vuedio.vue?vue&type=template&id=b7878164&
+// CONCATENATED MODULE: ./src/components/Vuedio.vue?vue&type=template&id=9e1b2074&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
 var es6_regexp_match = __webpack_require__("4917");
@@ -7763,28 +7763,7 @@ var classCallCheck = __webpack_require__("d225");
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js
 var createClass = __webpack_require__("b0b4");
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
-var define_property = __webpack_require__("85f2");
-var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    define_property_default()(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
 // CONCATENATED MODULE: ./src/helpers/HighSpeedClock.js
-
 
 
 
@@ -7800,15 +7779,11 @@ function () {
   function HighSpeedClock() {
     Object(classCallCheck["a" /* default */])(this, HighSpeedClock);
 
-    _defineProperty(this, "listeners", []);
-
-    _defineProperty(this, "pending", null);
-
-    _defineProperty(this, "boundOnTick", void 0);
-
-    _defineProperty(this, "lastTickTime", -1);
-
-    _defineProperty(this, "running", false);
+    this.listeners = [];
+    this.pending = null;
+    this.boundOnTick = null;
+    this.lastTickTime = -1;
+    this.running = false;
   }
 
   Object(createClass["a" /* default */])(HighSpeedClock, [{
@@ -8130,7 +8105,7 @@ if (typeof window !== 'undefined' && window.Vue) {
         return this.sources.map(function (it) {
           return {
             id: it.id,
-            name: it.quality || it.height ? it.height + 'p' : '',
+            name: it.quality || it.height ? it.height + 'p' : it.name || '',
             selected: _this.currentSource ? _this.currentSource.id === it.id : false,
             callback: function callback() {
               _this.changeTo(it, true);
@@ -8279,7 +8254,7 @@ if (typeof window !== 'undefined' && window.Vue) {
       if (!this.subtitlesClock) {
         this.subtitlesClock = new HighSpeedClock_HighSpeedClock();
         this.subtitlesClock.tick(function () {
-          if (_this2.subtitlesInstance) {
+          if (_this2.subtitlesInstance && _this2.player) {
             _this2.subtitlesInstance.setCurrentTime(_this2.player.timestamp + _this2.offset);
           }
         });
@@ -8298,7 +8273,12 @@ if (typeof window !== 'undefined' && window.Vue) {
         clearTimeout(this.infoTimer);
       }
 
-      this.infoText = text;
+      if (!text) {
+        this.infoVisible = false;
+        return;
+      }
+
+      this.infoText = text || '';
       this.infoVisible = true;
 
       if (temp) {
@@ -8885,7 +8865,6 @@ if (typeof window !== 'undefined' && window.Vue) {
     this.tech.addEventListener('timeupdate', this.onTimeUpdate.bind(this));
     this.tech.addEventListener('loadedmetadata', this.onResize.bind(this));
     this.tech.addEventListener('volumechange', function () {
-      console.log('volumechange');
       _this9.volume = _this9.tech.muted ? 0 : _this9.tech.volume;
     });
     this.tech.addEventListener('progress', this.onProgress.bind(this));
@@ -8960,8 +8939,8 @@ var Vuediovue_type_style_index_0_lang_scss_ = __webpack_require__("2244");
 
 var Vuedio_component = normalizeComponent(
   components_Vuediovue_type_script_lang_js_,
-  Vuediovue_type_template_id_b7878164_render,
-  Vuediovue_type_template_id_b7878164_staticRenderFns,
+  Vuediovue_type_template_id_9e1b2074_render,
+  Vuediovue_type_template_id_9e1b2074_staticRenderFns,
   false,
   null,
   null,
