@@ -50,8 +50,8 @@ applications.
 ### Plain HTML usage
 1. include `<script>` tag and styles somewhere:
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/vuedio@0.2.5/dist/vuedio.umd.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuedio@0.2.5/dist/vuedio.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuedio@0.2.6/dist/vuedio.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuedio@0.2.6/dist/vuedio.min.css"></script>
     ```
 2. use Vuedio in your application:
     ```js
@@ -143,6 +143,7 @@ helper functions which can also be helpful outside Vuedio
  - `options`
    - **Type**: `SubtitleOctopusOptions ?= {}`
    - **Description**: Additional options to underlying `SubtitlesOctopus` constructor. More in [SubtitlesOctopus' documentation](https://github.com/Dador/JavascriptSubtitlesOctopus#options).
+     - Additionally accepts `method`, `headers`, `body` parameters that will be used when XHR is fired (for URLs)
  - `srcType`
    - **Type**: `'url' | any`
    - **Description**: `src` parameter type. Any value except `'url'` will count as raw ASS data.

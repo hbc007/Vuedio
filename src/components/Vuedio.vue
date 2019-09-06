@@ -300,13 +300,31 @@ export default {
                 this.subtitlesInstance = null
                 return
             }
-            options.canvas = this.subtitlesCanvas
-            options.workerUrl = this.subtitlesWorker
             if (srcType === 'url') {
-                options.subUrl = src
+                const xhr = new XMLHttpRequest()
+                xhr.open(options.method || 'GET', src)
+                xhr.onload = () => {
+                    this.subtitles(xhr.responseText, options, 'raw')
+                }
+                if (options.headers) {
+                    for (let k in options.headers) {
+                        if (options.headers.hasOwnProperty(k)) {
+                            if (!Array.isArray(options.headers[k])) {
+                                xhr.setRequestHeader(k, options.headers[k])
+                            } else {
+                                for (let val of options.headers[k]) {
+                                    xhr.setRequestHeader(k, val)
+                                }
+                            }
+                        }
+                    }
+                }
+                return xhr.send(options.body)
             } else {
                 options.subContent = src
             }
+            options.canvas = this.subtitlesCanvas
+            options.workerUrl = this.subtitlesWorker
             this.subtitlesInstance = new SubtitlesOctopus(options)
             if (!this.subtitlesClock) {
                 this.subtitlesClock = new HighSpeedClock()
