@@ -13,9 +13,9 @@ applications.
  - DASH (using [dash.js](https://github.com/Dash-Industry-Forum/dash.js/))
 
 ## Screenshots
-![Subtitles](http://tggdesu.github.io/cdn/vuedio/img/FWN1k-2KTiKOvO_5USRg7w.png?1)  
-![Qualities](http://tggdesu.github.io/cdn/vuedio/img/DPBHSyOfSJWwHi6072aisA.png?1)  
-![HLS support](http://tggdesu.github.io/cdn/vuedio/img/okiC57q2TUWJFSAk2UPOFA.png?1)  
+![Subtitles](http://teidesu.github.io/cdn/vuedio/img/FWN1k-2KTiKOvO_5USRg7w.png?1)  
+![Qualities](http://teidesu.github.io/cdn/vuedio/img/DPBHSyOfSJWwHi6072aisA.png?1)  
+![HLS support](http://teidesu.github.io/cdn/vuedio/img/okiC57q2TUWJFSAk2UPOFA.png?1)  
 
 
 ## Installation
